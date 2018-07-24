@@ -2,33 +2,43 @@ import React from "react";
 import "./Nav.scss";
 
 export class Nav extends React.Component {
-    render() {
-        return <header>
-            <nav className="menu_fixed navbar navbar-inverse" role="navigetion">
-                <div className="container-fluid">
-                    <div className="navbar-header">
-                        <a href="index.html" class="navbar-brand">
-                            <img src="../images/logo1.png" alt="Welcome to Krakow" id="wtkImg"/>
-                        </a>  
-                        <span class="phone_number"><i class="fas fa-mobile-alt"></i> +48 570 042 478</span>
-                        <button type="button" class="navbar-toggle collapse" data-toggle="collapse" data-target="#topMenu">
-                            <i class="fas fa-bars"></i>
-                        </button>
-                    </div>
-
-                    <div className="collapse navbar-collapse">
-                    <ul class="menu nav navbar-nav" id="mainMenu">
-                            <li><a href="/">About</a></li>
-                            <li><a href="/">Tours</a></li>
-                            <li><a href="/">Booking</a></li>
-                            <li><a href="/">Photos</a></li>
-                            <li><a href="/">Contact</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </nav>
-        </header>;
-    }
+  constructor(props){
+    super(props);
+    this.state = {
+      collapse: true
+    };
+  }
+  changeCollapse = () => {
+    const {collapse} = this.state;
+    this.setState({
+      collapse: !collapse
+    })
+  }
+  render() {
+    return (
+      <header>
+        <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+          <a className="navbar-brand" href="#">LOGO</a>
+          <button onClick={ this.changeCollapse } className="navbar-toggler" type="button">
+            <span className="navbar-toggler-icon"></span>
+          </button>
+          <div className={`navbar-collapse ${this.state.collapse && "collapse"}`}>
+            <ul className="navbar-nav mr-auto">
+              <li className="nav-item active">
+                <a className="nav-link" href="#">Home</a>
+              </li>
+              <li className="nav-item">
+                <a className="nav-link" href="#">Link</a>
+              </li>
+              <li className="nav-item">
+                <a className="nav-link disabled" href="#">Disabled</a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </header>
+    );
+  }
 }
 
 
