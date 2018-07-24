@@ -17,21 +17,30 @@ export class Nav extends React.Component {
   render() {
     return (
       <header>
-        <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
-          <a className="navbar-brand" href="#">LOGO</a>
+        <nav className="navbar navbar-expand-md navbar-dark menu_fixed">
+          <a className="navbar-brand" href="#">
+              <img src="../images/logo1.png" alt="Welcome to Krakow" id="wtkImg"/>
+          </a>
+          <span className="phone_number"><i className="fas fa-mobile-alt"></i> +48 570 042 478</span>
           <button onClick={ this.changeCollapse } className="navbar-toggler" type="button">
             <span className="navbar-toggler-icon"></span>
           </button>
-          <div className={`navbar-collapse ${this.state.collapse && "collapse"}`}>
-            <ul className="navbar-nav mr-auto">
+          <div className={`navbar-collapse d-flex justify-content-end ${this.state.collapse && "collapse"}`} id="topMenu">
+            <ul className="navbar-nav menu">
               <li className="nav-item active">
-                <a className="nav-link" href="#">Home</a>
+                <a className="nav-link" href="#">About</a>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="#">Link</a>
+                <a className="nav-link" href="#">Tours</a>
               </li>
               <li className="nav-item">
-                <a className="nav-link disabled" href="#">Disabled</a>
+                <a className="nav-link" href="#">Booking</a>
+              </li>
+              <li className="nav-item">
+                <a className="nav-link" href="#">Photos</a>
+              </li>
+              <li className="nav-item">
+                <a className="nav-link" href="#">Contact</a>
               </li>
             </ul>
           </div>

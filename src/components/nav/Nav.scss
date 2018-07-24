@@ -37,8 +37,11 @@ nav {
     #topMenu {
         @media only screen and (max-width: 768px) {
             background-color:$nav-background-color;
-            padding: 2vh 0;
-            position: relative;
+            position: absolute;
+            left: 0;
+            top: 14vh;
+            width: 100%;
+            justify-content: center!important;
         }
     }
         
@@ -49,20 +52,20 @@ nav {
     .phone_number {
         color: $text-color;
         font-weight: 600;
-        font-size: 3vh;
+        font-size: 18px;
         font-family: sans-serif;
     }
 
     .menu {
         list-style-type: none;
+        font-size: 2vh;
 
         li {
             @media only screen and (max-width: 768px) {
                 display: block;
-                text-align:center;
             }
             display: inline-block;
-            padding: 0 25px;
+            padding: 0 10px;
             a {
                 @media only screen and (max-width: 768px) {
                     display:block;
@@ -70,6 +73,9 @@ nav {
                 color: $text-color;
                 text-transform: uppercase;
                 font-family: "RalewayBold", sans-serif;
+                font-size: 3vh;
+                font-weight: 400;
+                text-align: center;
 
                 &:hover, &:focus {
                     @media only screen and (max-width: 768px) {

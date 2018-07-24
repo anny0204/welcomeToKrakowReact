@@ -1,0 +1,20 @@
+@import  "../../../config/palette.scss";
+
+.param_block {
+    padding-top: 2vh;
+    padding-bottom: 3vh;
+    text-align: center;
+
+    i {
+        color: $additional-text-color;
+        padding: 1vh 0;
+    }
+
+    h3 {
+        text-transform: uppercase;
+        font-family: "RalewayBold",sans-serif;
+    }
+    p {
+        text-align: justify;
+    }
+}
