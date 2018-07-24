@@ -11,19 +11,19 @@ export class Nav extends React.Component {
                             <img src="../images/logo1.png" alt="Welcome to Krakow" id="wtkImg"/>
                         </a>  
                         <span class="phone_number"><i class="fas fa-mobile-alt"></i> +48 570 042 478</span>
-                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#topMenu">
+                        <button type="button" class="navbar-toggle collapse" data-toggle="collapse" data-target="#topMenu">
                             <i class="fas fa-bars"></i>
                         </button>
                     </div>
 
-                    <div className="collapse navbar-collapse" id="topMenu">
-                    <ul class="menu" id="mainMenu">
-                                <li><a href="/">About</a></li>
-                                <li><a href="/">Tours</a></li>
-                                <li><a href="/">Booking</a></li>
-                                <li><a href="/">Photos</a></li>
-                                <li><a href="/">Contact</a></li>
-                            </ul>
+                    <div className="collapse navbar-collapse">
+                    <ul class="menu nav navbar-nav" id="mainMenu">
+                            <li><a href="/">About</a></li>
+                            <li><a href="/">Tours</a></li>
+                            <li><a href="/">Booking</a></li>
+                            <li><a href="/">Photos</a></li>
+                            <li><a href="/">Contact</a></li>
+                        </ul>
                     </div>
                 </div>
             </nav>
