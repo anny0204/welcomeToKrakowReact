@@ -1,0 +1,51 @@
+@import "../../../config/palette.scss";
+
+.trip_item {
+    align-items: stretch;
+    flex-wrap: wrap;
+    justify-content: center;
+    box-sizing: border-box;
+    vertical-align: baseline;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+
+    img {
+        margin-bottom: 3vh;
+    }
+
+    h4 {
+        font-family:" RalewayBold", sans-serif;
+        color: $title-text-color;
+    }
+
+    > span {
+        text-transform: uppercase;
+        color: $additional-text-color ;
+    }
+
+    p {
+        padding: 1vh 0;
+        margin: 3vh 0;   
+        text-align: justify;
+    }
+
+    .read_btn {
+        right: 1vw;
+        bottom: 1vh;
+        position: absolute;
+        text-align: right;
+        vertical-align: baseline;
+
+        .btn_blue {
+            display: inline-block;
+            border: 1px solid $additional-text-color;
+            color: $text-color;
+            background-color: $additional-text-color;
+            border-radius: 5px;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+    }
+}
