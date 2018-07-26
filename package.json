@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "webpack-dev-server --content-base --inline --hot",
     "build": "webpack",
-    "heroku-postbuild": "webpack"
+    "heroku-postbuild": "webpack",
+    "start": "harp server ~/public --port $PORT"
   },
   "author": "Anna Kovalenko",
   "license": "ISC",
