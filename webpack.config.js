@@ -73,7 +73,7 @@ module.exports = {
   plugins: [
     new ExtractTextPlugin('style.css'),
     new CopyWebpackPlugin([{
-      from: './index.html'
+      from: './public/index.html'
     },
       {
         from: 'images/**/*'
