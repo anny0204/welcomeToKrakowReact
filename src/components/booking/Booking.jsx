@@ -11,7 +11,9 @@ export class Booking extends React.Component {
             errorNameDisplay: 'none',
             lastName: "",
             errorLastNameDisplay: 'none',
-            placesCount: 1
+            placesCount: 1,
+            selectedTour: tours[0].name,
+            tripDate: ""
         }
     }
 
@@ -36,18 +38,9 @@ export class Booking extends React.Component {
 
     inputPlacesCountChange(event) {
         let { value } = event.target;
-        const regExp = new RegExp("\d+");
-
-        let isNumber = value[value.length - 1].match(/\d/);
-        let newValue = isNumber !== null ? value : value.substring(0, value.length - 1);
-        console.log(isNumber);
-        
-        console.log(newValue);
-        
-        // console.dir(event.target);
-        // value = (isNaN(value) && parseInt(value) <= 0) ? 1 : value;        
+        value = value.replace(/\D+/,"");
         this.setState({
-            placesCount: newValue
+            placesCount: value
         })
     }
 
@@ -56,7 +49,8 @@ export class Booking extends React.Component {
             errorNameDisplay,
             lastName,
             errorLastNameDisplay,
-            placesCount
+            placesCount,
+            selectedTour
         } = this.state;
         errorNameDisplay = name === "" ? 'block' : 'none' ;
         errorLastNameDisplay = lastName === "" ? 'block' : 'none' ;
@@ -68,6 +62,20 @@ export class Booking extends React.Component {
         if (name === "" || lastName === "")
             return false;
         return true;
+    }
+
+    changeSelectedTour(event) {
+        const { value } = event.target;
+        this.setState({
+            selectedTour: value
+        })
+    }
+
+    onChageTripDate(event) {
+        const { value } = event.target;
+        this.setState({
+            tripDate: value
+        })
     }
 
     sendBooking(event) {
@@ -82,7 +90,9 @@ export class Booking extends React.Component {
             name,
             errorLastNameDisplay,
             lastName,
-            placesCount
+            placesCount,
+            selectedTour,
+            tripDate
         } = this.state;
         return <div className="menu_component">
             <div className="menu_component_header">
@@ -142,20 +152,26 @@ export class Booking extends React.Component {
                     <div className="form-group row">
                         <label for="tour" className="col-sm-4 control-label">Choose a tour</label>
                         <div className="col-sm-8">
-                            <select id="tour" name="tour" className="form-control" required>
+                            <select name="tour"
+                                className="form-control"
+                                required
+                                value={selectedTour}
+                                onChange={(e) => this.changeSelectedTour(e)}>
                             {
                                 tours.map(({ id, name }) => <option key={id}>{name}</option>)
                             }
                             </select>
-                            <div className="error">
-
-                            </div>
                         </div>
                     </div>
                     <div className="form-group row">
                         <label for="dateTour" className="col-sm-4 control-label">Choose date</label>
                         <div className="col-sm-8">
-                            <input type="date" id="dateTour" name="dateTour" className="form-control" required />
+                            <input type="date"
+                                name="dateTour"
+                                className="form-control"
+                                required
+                                value={tripDate}
+                                onChange={(e) => this.onChageTripDate(e)}/>
                             <div className="error" ng-show="showError">
 
                             </div>
