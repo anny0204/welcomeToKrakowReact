@@ -17,6 +17,7 @@
     "copy-descriptor": "^0.1.1",
     "copy-webpack-plugin": "^4.1.1",
     "extract-text-webpack-plugin": "^2.1.2",
+    "harp": "^0.25.0",
     "jquery": "^3.3.1",
     "node-sass": "^4.9.1",
     "npm": "^6.1.0",
