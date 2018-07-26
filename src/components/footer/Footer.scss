@@ -1,0 +1,41 @@
+@import "../../../config/palette.scss";
+
+.main_footer {
+    padding: 2vh 0;
+    background-color: $additional-text-color;
+}
+
+.footer_item {
+    text-align: center;
+
+    h5 {
+        font-family: "RalewayBold", sans-serif;
+        color: $text-color;
+        text-transform: uppercase;
+    }
+
+    p {
+        font-size: 1rem;
+        color: $hint-text-color;
+    }
+
+    .soc_btn_white {
+        border: solid 1px $text-color;
+        color: $text-color;
+        border-radius: 50%;
+        background-color: transparent;
+        width: 6vh;
+        height: 6vh;
+    }
+}
+
+.copyright_block {
+    background-color: $contrast-color;
+    padding: 2vh 0;
+
+    .copy_txt {
+        margin: 0 auto;
+        text-align: center;
+        color: $hint-text-color;
+    }
+}

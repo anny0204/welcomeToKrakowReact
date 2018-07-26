@@ -9,7 +9,7 @@ export class Trip extends React.Component {
             <h4>{title}</h4>
             <span>{description}</span>
             <p>{text}</p>
-            <div class="read_btn">
+            <div class="btn_blue_container">
                 <a class="btn btn_blue"><i class="fa fa-info"> Read more</i></a>
             </div>
         </div>;

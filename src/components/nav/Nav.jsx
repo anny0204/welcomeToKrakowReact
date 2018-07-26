@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./Nav.scss";
 
 export class Nav extends React.Component {
@@ -25,16 +26,16 @@ export class Nav extends React.Component {
           <button onClick={ this.changeCollapse } className="navbar-toggler" type="button">
             <span className="navbar-toggler-icon"></span>
           </button>
-          <div className={`navbar-collapse d-flex justify-content-end ${this.state.collapse && "collapse"}`} id="topMenu">
+          <div className={`navbar-collapse d-flex justify-content-end ${this.state.collapse && "collapsed"}`} id="topMenu">
             <ul className="navbar-nav menu">
               <li className="nav-item active">
-                <a className="nav-link" href="#">About</a>
+                <Link to="/about" className="nav-link">About</Link>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="#">Tours</a>
+                <Link to="/tours" className="nav-link">Tours</Link>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="#">Booking</a>
+                <Link to="/booking" className="nav-link" href="#">Booking</Link>
               </li>
               <li className="nav-item">
                 <a className="nav-link" href="#">Photos</a>
