@@ -1,6 +1,12 @@
 import React from "react";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import "./Nav.scss";
+
+import { About } from "../about/About.jsx";
+import { Tours } from "../tours/Tours.jsx";
+import { Booking } from "../booking/Booking.jsx";
+import { BackgroundHeader } from "../background-header/BackgroundHeader.jsx";
+import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
 
 export class Nav extends React.Component {
   constructor(props){
@@ -17,6 +23,7 @@ export class Nav extends React.Component {
   }
   render() {
     return (
+      <Router>
       <header>
         <nav className="navbar navbar-expand-md navbar-dark menu_fixed">
           <a className="navbar-brand" href="#">
@@ -46,7 +53,15 @@ export class Nav extends React.Component {
             </ul>
           </div>
         </nav>
+        <Switch>
+          <Route exact path="/" component={BackgroundHeader} />
+          <Route exact path="/about" component={About} />  
+          <Route exact path="/tours" component={Tours} />
+          <Route exact path="/booking" component={Booking} />    
+      </Switch>
+
       </header>
+      </Router>
     );
   }
 }

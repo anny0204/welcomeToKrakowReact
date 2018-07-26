@@ -7,24 +7,24 @@
 
     position: absolute;
     top: 20vh;
-    left: 20vw;
-    width: 60vw;
+    width: 80%;
 
     .title_block {
         color:$text-color;
         text-align: center;
-        margin: 10vh auto;
     
         h1 {
             font-size: 10vh;
             font-family: "RalewayBold", sans-serif;
             margin-bottom: 5vh;
+            text-align: center!important;
         }
     
         p {
             font-size: 6vh;
-            margin-bottom: 10vh;
+            margin-bottom: 5vh;
             font-weight: 600;
+            text-align: center!important;
         }
     }
     

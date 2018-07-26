@@ -13,7 +13,10 @@ export class Booking extends React.Component {
             errorLastNameDisplay: 'none',
             placesCount: 1,
             selectedTour: tours[0].name,
-            tripDate: ""
+            tripDate: "",
+            errorTripDateDisplay: 'none',
+            phoneNumber: "",
+            errorPhoneNumberDisplay: "none"
         }
     }
 
@@ -24,7 +27,8 @@ export class Booking extends React.Component {
     inputNameChange(event) {
         const { value } = event.target;
         this.setState({
-            name: value
+            name: value,
+            errorNameDisplay: 'none'
         })
     }
 
@@ -32,7 +36,8 @@ export class Booking extends React.Component {
         const { value } = event.target;
         
         this.setState({
-            lastName: value
+            lastName: value,
+            errorLastNameDisplay: 'none'
         })
     }
 
@@ -50,13 +55,21 @@ export class Booking extends React.Component {
             lastName,
             errorLastNameDisplay,
             placesCount,
-            selectedTour
+            selectedTour,
+            tripDate,
+            errorTripDateDisplay,
+            phoneNumber,
+            errorPhoneNumberDisplay
         } = this.state;
-        errorNameDisplay = name === "" ? 'block' : 'none' ;
-        errorLastNameDisplay = lastName === "" ? 'block' : 'none' ;
+        errorNameDisplay = name === "" ? 'block' : 'none';
+        errorLastNameDisplay = lastName === "" ? 'block' : 'none';
+        errorTripDateDisplay = tripDate === "" ? 'block' : 'none';
+        errorPhoneNumberDisplay = phoneNumber === "" ? 'block' : 'none';
         this.setState({
             errorNameDisplay: errorNameDisplay,
-            errorLastNameDisplay: errorLastNameDisplay
+            errorLastNameDisplay: errorLastNameDisplay,
+            errorTripDateDisplay: errorTripDateDisplay,
+            errorPhoneNumberDisplay: errorPhoneNumberDisplay
         })
 
         if (name === "" || lastName === "")
@@ -71,10 +84,19 @@ export class Booking extends React.Component {
         })
     }
 
-    onChageTripDate(event) {
+    onChangeTripDate(event) {
         const { value } = event.target;
         this.setState({
-            tripDate: value
+            tripDate: value,
+            errorTripDateDisplay: 'none'
+        })
+    }
+
+    onPhoneNumberChange() {
+        const { value } = event.target;
+        this.setState({
+            phoneNumber: value,
+            errorPhoneNumberDisplay: 'none'
         })
     }
 
@@ -92,7 +114,10 @@ export class Booking extends React.Component {
             lastName,
             placesCount,
             selectedTour,
-            tripDate
+            errorTripDateDisplay,
+            tripDate,
+            phoneNumber,
+            errorPhoneNumberDisplay
         } = this.state;
         return <div className="menu_component">
             <div className="menu_component_header">
@@ -143,10 +168,13 @@ export class Booking extends React.Component {
                     <div className="form-group row">
                         <label for="phoneNumber" className="col-sm-4 control-label">Phone number</label>
                         <div className="col-sm-8">
-                            <input type="text" id="phoneNumber" name="phoneNumber" className="form-control" required />
-                            <div className="error">
-
-                            </div>
+                            <input type="text"
+                                name="phoneNumber"
+                                className="form-control"
+                                required
+                                value={phoneNumber}
+                                onChange={(e) => this.onPhoneNumberChange(e)}/>
+                            <small className="error" style={{display:errorPhoneNumberDisplay}}>Phone number cannot be empty</small>
                         </div>
                     </div>
                     <div className="form-group row">
@@ -171,10 +199,8 @@ export class Booking extends React.Component {
                                 className="form-control"
                                 required
                                 value={tripDate}
-                                onChange={(e) => this.onChageTripDate(e)}/>
-                            <div className="error" ng-show="showError">
-
-                            </div>
+                                onChange={(e) => this.onChangeTripDate(e)}/>
+                            <small className="error" style={{display:errorTripDateDisplay}}>Trip date cannot be empty</small>
                         </div>
                     </div>
                     <div className="form-group row">

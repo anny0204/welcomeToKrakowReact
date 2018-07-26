@@ -9,12 +9,12 @@ header {
     height: auto;
     background: url('../../../images/mainCracow.jpg') no-repeat;
     background-size: cover;
+    position: relative;
 }
 
 nav {
     @media only screen and (max-width: 768px) {
         background-color: $nav-background-color;
-        height: auto;
     }
     position: fixed!important;
     height: 14vh;
